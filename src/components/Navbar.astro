@@ -1,0 +1,46 @@
+---
+import { Button } from "./ui/button";
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-neutral-800 bg-black/20 backdrop-blur-md"
+>
+  <div class="container flex h-16 items-center">
+    <div class="mr-4 hidden md:flex">
+      <a class="mr-6 flex items-center space-x-2" href="/">
+        <span class="hidden font-bold sm:inline-block text-2xl"
+          >Marcial Fantini</span
+        >
+      </a>
+      <nav class="flex items-center space-x-6 text-sm font-medium">
+        <a
+          href="#home"
+          class="text-neutral-200 hover:text-white transition-colors">Home</a
+        >
+        <a
+          href="#services"
+          class="text-neutral-200 hover:text-white transition-colors"
+          >Services</a
+        >
+        <a
+          href="#projects"
+          class="text-neutral-200 hover:text-white transition-colors"
+          >Projects</a
+        >
+        <a
+          href="#about"
+          class="text-neutral-200 hover:text-white transition-colors"
+          >About Me</a
+        >
+        <a
+          href="#contact"
+          class="text-neutral-200 hover:text-white transition-colors">Contact</a
+        >
+      </nav>
+    </div>
+    <Button
+      className="ml-auto bg-[#C549EB] hover:bg-[#B038D9] text-white font-bold"
+      >Request a Free Consultation</Button
+    >
+  </div>
+</header>
