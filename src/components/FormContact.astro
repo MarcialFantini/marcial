@@ -1,0 +1,67 @@
+<form id="contact-form" class="space-y-4">
+  <input
+    type="text"
+    name="user_name"
+    placeholder="Name"
+    class="w-full px-3 py-2 bg-neutral-700 bg-opacity-50 text-white border border-neutral-600 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+    required
+  />
+  <input
+    type="email"
+    name="user_email"
+    placeholder="Email"
+    class="w-full px-3 py-2 bg-neutral-700 bg-opacity-50 text-white border border-neutral-600 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+    required
+  />
+  <textarea
+    name="message"
+    placeholder="Message"
+    class="w-full px-3 py-2 bg-neutral-700 bg-opacity-50 text-white border border-neutral-600 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 h-32"
+    required></textarea>
+  <button
+    type="submit"
+    class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md text-lg transition duration-300"
+    >Send Message</button
+  >
+</form>
+
+<script>
+  const form = document.getElementById(
+    "contact-form"
+  ) as HTMLFormElement | null;
+
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault(); // Evita la recarga de la página al enviar el formulario
+
+      // Accede a los elementos de formulario de forma segura
+      const formData = {
+        user_name: (form.elements.namedItem("user_name") as HTMLInputElement)
+          .value,
+        user_email: (form.elements.namedItem("user_email") as HTMLInputElement)
+          .value,
+        message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+          .value,
+      };
+
+      try {
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          alert("Message sent successfully!");
+          form.reset(); // Limpia el formulario después del envío
+        } else {
+          alert("Error sending message. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("There was an error sending the message. Please try again.");
+      }
+    });
+  }
+</script>

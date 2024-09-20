@@ -1,0 +1,43 @@
+<section id="home" class="py-24 md:py-32 lg:py-40 relative">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="flex flex-col items-center space-y-4 text-center">
+      <div class="space-y-2">
+        <h1
+          class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none"
+        >
+          Web Developer Crafting Digital Excellence
+        </h1>
+        <p class="mx-auto max-w-[700px] text-neutral-300 md:text-xl">
+          Designing, developing, and optimizing sophisticated websites for
+          visionary CEOs, founders, and ambitious businesses
+        </p>
+      </div>
+      <div class="w-full max-w-sm space-y-2">
+        <button
+          class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md text-lg transition duration-300"
+        >
+          Initiate Your Project
+        </button>
+      </div>
+      <div class="text-sm text-neutral-400">
+        Not ready to commit? <button
+          data-target="services"
+          class="text-yellow-500 hover:underline">Explore my services</button
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  import { GoToID } from "@/layouts/GoToLink";
+
+  // Select all buttons with data-target attribute
+  const buttons = document.querySelectorAll("button[data-target]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetID = button.getAttribute("data-target");
+      GoToID(targetID)();
+    });
+  });
+</script>
