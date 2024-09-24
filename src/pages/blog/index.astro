@@ -1,0 +1,45 @@
+---
+import { databases } from "../../lib/appwrite";
+import Layout from "../../layouts/Layout.astro";
+import { Query } from "appwrite";
+const page = await databases.listDocuments(
+  "66f1c1a400007216c982",
+  "66f1c1ba00074254c99f",
+  [Query.limit(10), Query.offset(0)]
+);
+
+console.log(page);
+const data = page.documents;
+---
+
+<Layout title="blogs">
+  <main class="flex-1">
+    <div class="grid grid-cols-3 max-w-[1200px] m-auto my-5">
+      {
+        data.map((item) => {
+          return (
+            <div class="bg-neutral-800 bg-opacity-30 overflow-hidden backdrop-filter backdrop-blur-sm relative rounded-lg">
+              <img
+                src={item.srcImage}
+                alt={item.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2 text-yellow-500">
+                  {item.title}
+                </h3>
+                <p class="text-neutral-300 mb-4">{item.body}</p>
+                <a
+                  href={"/blog/" + item.slug}
+                  class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition duration-300"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </main>
+</Layout>

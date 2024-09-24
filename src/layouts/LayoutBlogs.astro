@@ -1,0 +1,166 @@
+---
+import Footer from "@/components/Footer.astro";
+import Navbar from "@/components/Navbar.astro";
+import "../styles/globals.css";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Marcial Fantini, web developer and programmer specializing in custom software for small and medium-sized businesses in the USA. I offer high-quality solutions at competitive prices for founders, CEOs, and startups."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="web developer, programmer, custom software, tailored solutions, software for startups, web development USA, software for businesses, affordable web development, web development for CEOs, freelance programmer"
+    />
+    <meta name="author" content="Marcial Fantini" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content="Astro" />
+    <title>{title}</title>
+  </head>
+  <body
+    class="min-h-[100vh] flex flex-col bg-gradient-to-br from-black via-neutral-900 to-neutral-800 text-white relative"
+  >
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  /* Encabezados (Headers) */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  /* Párrafos */
+  p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+  }
+
+  /* Negritas (Bold) */
+  strong {
+    font-weight: bold;
+    color: #fff;
+  }
+
+  /* Itálica (Italic) */
+  em {
+    font-style: italic;
+    color: #bbb;
+  }
+
+  /* Listas (Lists) */
+  ul,
+  ol {
+    margin: 10px 0;
+    padding-left: 30px;
+    font-size: 1em;
+    color: #ccc;
+  }
+
+  ul li,
+  ol li {
+    margin-bottom: 8px;
+  }
+
+  /* Enlaces (Links) */
+  a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Bloques de código (Code blocks) */
+  pre {
+    background-color: #1c1c1c;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    overflow-x: auto;
+    color: #ddd;
+  }
+
+  code {
+    background-color: #1c1c1c;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: "Courier New", Courier, monospace;
+    color: #fff;
+    font-size: 0.9em;
+  }
+
+  /* Citas (Blockquotes) */
+  blockquote {
+    border-left: 5px solid #444;
+    padding-left: 15px;
+    font-style: italic;
+    color: #aaa;
+    margin: 20px 0;
+  }
+
+  /* Tablas (Tables) */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid #444;
+  }
+
+  th {
+    background-color: #333;
+    font-weight: bold;
+    text-align: left;
+    color: #fff;
+  }
+
+  td {
+    background-color: #1a1a1a;
+    color: #ddd;
+  }
+
+  /* Imágenes (Images) */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+  }
+</style>

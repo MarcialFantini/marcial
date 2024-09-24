@@ -1,7 +1,7 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
-
+import "../styles/globals.css";
 interface Props {
   title: string;
 }
@@ -28,11 +28,10 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="flex flex-col bg-gradient-to-br from-black via-neutral-900 to-neutral-800 text-white relative"
+    class="min-h-[100vh] flex flex-col bg-gradient-to-br from-black via-neutral-900 to-neutral-800 text-white relative"
   >
     <Navbar />
     <slot />
     <Footer />
   </body>
 </html>
-<style></style>

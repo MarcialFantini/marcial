@@ -70,15 +70,8 @@ const transporter = nodemailer.createTransport({
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    console.log({ 
-
-user: process.env.SMTP_USER, 
-    pass: process.env.SMTP_PASS, 
-      
-    })
+    
     const formData: FormData = await request.json();
-
-  
 
     const mailOptions = {
       from: process.env.SMTP_USER,
