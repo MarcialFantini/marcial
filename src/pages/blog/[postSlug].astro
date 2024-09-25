@@ -57,10 +57,7 @@ const post = promise.documents[0];
           <span class="mx-2">•</span>
           <span>By Marcial Fantini</span>
         </div>
-        <img
-          src="https://res.cloudinary.com/dwfr6nsml/image/upload/v1727199272/auto.jpg"
-          class="w-full h-auto"
-        />
+        <img src={post.srcImage} class="w-full h-auto" />
 
         <Fragment set:html={marked(post.content)} />
       </article>

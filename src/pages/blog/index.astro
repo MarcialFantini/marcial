@@ -14,11 +14,11 @@ const data = page.documents;
 
 <Layout title="blogs">
   <main class="flex-1">
-    <div class="grid grid-cols-3 max-w-[1200px] m-auto my-5">
+    <div class="w-[90%] gap-5 grid lg:grid-cols-3 max-w-[1200px] m-auto my-5">
       {
         data.map((item) => {
           return (
-            <div class="bg-neutral-800 bg-opacity-30 overflow-hidden backdrop-filter backdrop-blur-sm relative rounded-lg">
+            <div class="   bg-neutral-800 bg-opacity-30 overflow-hidden backdrop-filter backdrop-blur-sm relative rounded-lg">
               <img
                 src={item.srcImage}
                 alt={item.title}

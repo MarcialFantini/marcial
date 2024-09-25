@@ -29,6 +29,11 @@
           class="text-neutral-200 hover:text-white transition-colors"
           >About Me</button
         >
+        <a
+          href="/blog"
+          data-target="contact"
+          class="text-neutral-200 hover:text-white transition-colors">Blog</a
+        >
         <button
           data-target="contact"
           class="text-neutral-200 hover:text-white transition-colors"
@@ -39,21 +44,31 @@
     <button
       data-target="contact"
       class="ml-auto bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition duration-300"
-      >Request Free Consultation</button
+      >Let's talk!</button
     >
   </div>
 </header>
 
 <script>
   import { GoToID } from "@/layouts/GoToLink";
+  import { navigate } from "astro:transitions/client";
 
   const buttons = document.querySelectorAll("button[data-target]");
 
   buttons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
       const targetID = button.getAttribute("data-target");
-      GoToID(targetID)();
-      console.log(targetID);
+
+      if (window.location.pathname !== "/") {
+        console.log("/" + "#" + targetID);
+        await navigate("/" + "#" + targetID).then(() => {
+          setTimeout(() => GoToID(targetID)(), 1000);
+          console.log(targetID);
+        });
+      } else {
+        GoToID(targetID)();
+        console.log(targetID);
+      }
     });
   });
 </script>

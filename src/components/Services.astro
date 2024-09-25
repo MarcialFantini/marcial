@@ -20,24 +20,24 @@ const services = [
     <div class="grid gap-6 lg:grid-cols-3">
       {
         services.map((service) => (
-          <div class="bg-neutral-800 bg-opacity-30 border border-neutral-700 backdrop-filter backdrop-blur-sm relative overflow-hidden rounded-lg p-6">
+          <div class="flex flex-col bg-neutral-800 bg-opacity-30 border border-neutral-700 backdrop-filter backdrop-blur-sm relative overflow-hidden rounded-lg p-6">
             <h3 class="text-2xl font-bold text-yellow-500 mb-2">{service}</h3>
             <p class="text-neutral-300 mb-4">
               Transforming your vision, I craft digital experiences that engage
               and retain your audience.
             </p>
-            <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition duration-300">
+            <button class="mt-auto w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition duration-300">
               Learn More
             </button>
           </div>
         ))
       }
     </div>
-    <div class="mt-12 text-center">
+    <!-- <div class="mt-12 text-center">
       <button
         class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md text-lg transition duration-300"
         >Explore All Services</button
       >
-    </div>
+    </div> -->
   </div>
 </section>
