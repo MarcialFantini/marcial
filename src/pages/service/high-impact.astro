@@ -1,0 +1,126 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const features = [
+  "Custom design tailored to your brand",
+  "Responsive layouts for all devices",
+  "SEO optimization for better visibility",
+  "Fast loading speeds for improved user experience",
+  "Integration with content management systems",
+  "E-commerce functionality (if required)",
+];
+
+const process = [
+  {
+    title: "Discovery",
+    description:
+      "We start by understanding your business, goals, and target audience.",
+  },
+  {
+    title: "Planning",
+    description: "We create a detailed project plan and sitemap.",
+  },
+  {
+    title: "Design",
+    description: "We craft unique designs that align with your brand.",
+  },
+  {
+    title: "Development",
+    description: "We build your website using cutting-edge technologies.",
+  },
+  {
+    title: "Testing",
+    description: "We rigorously test your website across devices and browsers.",
+  },
+  {
+    title: "Launch",
+    description:
+      "We deploy your website and provide training on how to manage it.",
+  },
+];
+---
+
+<Layout title="High impact Website Creation">
+  <main class="flex-1 py-12 md:py-24 lg:py-32">
+    <div class="container mx-auto px-4 md:px-6">
+      <h1
+        class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-6 text-center"
+      >
+        High-Impact Website Creation
+      </h1>
+      <p class="text-xl text-neutral-300 mb-12 text-center max-w-3xl mx-auto">
+        Bringing your vision to life with custom website designs that captivate
+        visitors and convert them into loyal customers.
+      </p>
+
+      <div class="grid gap-12 lg:grid-cols-2 items-center mb-12">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">
+            Why Choose Our Website Creation Service?
+          </h2>
+          <ul class="space-y-4">
+            {
+              features.map((feature) => (
+                <li class="flex items-center">
+                  <svg
+                    class="w-6 h-6 mr-2 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  {feature}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="relative">
+          <img
+            src="/placeholder.svg?height=400&width=600"
+            alt="High-Impact Website Creation"
+            width={600}
+            height={400}
+            class="rounded-lg shadow-xl"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-purple-600 to-yellow-500 opacity-20 rounded-lg"
+          >
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-bold mb-6 text-center">
+        Our Website Creation Process
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+        {
+          process.map((step) => (
+            <div class="bg-neutral-800 bg-opacity-30 p-6 rounded-lg backdrop-blur-sm">
+              <h3 class="text-xl font-bold mb-2 text-yellow-500">
+                {step.title}
+              </h3>
+              <p class="text-neutral-300">{step.description}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="text-center">
+        <a
+          href="/#contact"
+          class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md text-lg transition duration-300"
+        >
+          Start Your Website Project
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

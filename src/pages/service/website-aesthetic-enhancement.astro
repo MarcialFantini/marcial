@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+
+const benefits = [
+  "Improved user experience and engagement",
+  "Increased conversion rates",
+  "Enhanced brand perception",
+  "Better mobile responsiveness",
+  "Faster loading times",
+  "Improved accessibility",
+];
+
+const enhancementAreas = [
+  {
+    title: "Visual Design",
+    description:
+      "Updating color schemes, typography, and overall visual style.",
+  },
+  {
+    title: "User Interface",
+    description: "Improving navigation, layout, and interactive elements.",
+  },
+  {
+    title: "Responsiveness",
+    description:
+      "Ensuring seamless experiences across all devices and screen sizes.",
+  },
+  {
+    title: "Performance",
+    description:
+      "Optimizing images, scripts, and other assets for faster loading.",
+  },
+  {
+    title: "Content Presentation",
+    description: "Enhancing how your content is displayed and consumed.",
+  },
+  {
+    title: "Accessibility",
+    description:
+      "Implementing features to make your site usable by all visitors.",
+  },
+];
+---
+
+<Layout title="Website Aesthetic Enhancement | Marcial Fantini">
+  <main class="flex-1 py-12 md:py-24 lg:py-32">
+    <div class="container mx-auto px-4 md:px-6">
+      <h1
+        class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-6 text-center"
+      >
+        Website Aesthetic Enhancement
+      </h1>
+      <p class="text-xl text-neutral-300 mb-12 text-center max-w-3xl mx-auto">
+        Revitalize your current site with cutting-edge design updates, ensuring
+        a modern and visually appealing user experience.
+      </p>
+
+      <div class="grid gap-12 lg:grid-cols-2 items-center mb-12">
+        <div class="relative">
+          <Image
+            src="/placeholder.svg?height=400&width=600"
+            alt="Website Aesthetic Enhancement"
+            width={600}
+            height={400}
+            class="rounded-lg shadow-xl"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-purple-600 to-yellow-500 opacity-20 rounded-lg"
+          >
+          </div>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-6">
+            Benefits of Aesthetic Enhancement
+          </h2>
+          <ul class="space-y-4">
+            {
+              benefits.map((benefit) => (
+                <li class="flex items-center">
+                  <svg
+                    class="w-6 h-6 mr-2 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  {benefit}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-bold mb-6 text-center">Areas of Enhancement</h2>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+        {
+          enhancementAreas.map((area) => (
+            <div class="bg-neutral-800 bg-opacity-30 p-6 rounded-lg backdrop-blur-sm">
+              <h3 class="text-xl font-bold mb-2 text-yellow-500">
+                {area.title}
+              </h3>
+              <p class="text-neutral-300">{area.description}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="text-center">
+        <a
+          href="/#contact"
+          class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md text-lg transition duration-300"
+        >
+          Enhance Your Website Now
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

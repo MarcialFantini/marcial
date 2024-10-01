@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+
+const customFunctionalities = [
+  "E-commerce integration",
+  "Content Management Systems (CMS)",
+  "User authentication and authorization",
+  "API development and integration",
+  "Real-time features (chat, notifications)",
+  "Data visualization and reporting",
+  "Booking and reservation systems",
+  "Custom search functionality",
+];
+
+const developmentProcess = [
+  {
+    title: "Requirements Gathering",
+    description:
+      "We work closely with you to understand your specific needs and goals.",
+  },
+  {
+    title: "Planning and Architecture",
+    description:
+      "We design the structure and flow of the custom functionality.",
+  },
+  {
+    title: "Development",
+    description:
+      "Our expert developers bring the functionality to life using best practices.",
+  },
+  {
+    title: "Testing and Quality Assurance",
+    description: "Rigorous testing ensures the functionality works flawlessly.",
+  },
+  {
+    title: "Integration",
+    description:
+      "We seamlessly integrate the new functionality into your existing website.",
+  },
+  {
+    title: "Training and Support",
+    description: "We provide comprehensive training and ongoing support.",
+  },
+];
+---
+
+<Layout title="Custom Functionalities Development | Marcial Fantini">
+  <main class="flex-1 py-12 md:py-24 lg:py-32">
+    <div class="container mx-auto px-4 md:px-6">
+      <h1
+        class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-6 text-center"
+      >
+        Custom Functionalities Development
+      </h1>
+      <p class="text-xl text-neutral-300 mb-12 text-center max-w-3xl mx-auto">
+        Tailoring advanced features to meet your unique business needs,
+        enhancing user interaction and website performance.
+      </p>
+
+      <div class="grid gap-12 lg:grid-cols-2 items-center mb-12">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">
+            Custom Functionalities We Can Develop
+          </h2>
+          <ul class="space-y-4 columns-2">
+            {
+              customFunctionalities.map((functionality) => (
+                <li class="flex items-center">
+                  <svg
+                    class="w-6 h-6 mr-2 text-green-500 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span>{functionality}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="relative">
+          <Image
+            src="/placeholder.svg?height=400&width=600"
+            alt="Custom Functionalities Development"
+            width={600}
+            height={400}
+            class="rounded-lg shadow-xl"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-purple-600 to-yellow-500 opacity-20 rounded-lg"
+          >
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-bold mb-6 text-center">
+        Our Development Process
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+        {
+          developmentProcess.map((step) => (
+            <div class="bg-neutral-800 bg-opacity-30 p-6 rounded-lg backdrop-blur-sm">
+              <h3 class="text-xl font-bold mb-2 text-yellow-500">
+                {step.title}
+              </h3>
+              <p class="text-neutral-300">{step.description}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="text-center">
+        <a
+          href="/#contact"
+          class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md text-lg transition duration-300"
+        >
+          Discuss Your Custom Functionality
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -5,7 +5,7 @@ import { Query } from "appwrite";
 const page = await databases.listDocuments(
   "66f1c1a400007216c982",
   "66f1c1ba00074254c99f",
-  [Query.limit(10), Query.offset(0)]
+  [Query.limit(10), Query.offset(0), Query.orderDesc("$createdAt")]
 );
 
 console.log(page);
