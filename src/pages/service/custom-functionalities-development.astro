@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
+import srcImg from "../../../public/image-0.webp";
 
 const customFunctionalities = [
   "E-commerce integration",
@@ -89,10 +90,8 @@ const developmentProcess = [
         </div>
         <div class="relative">
           <Image
-            src="/placeholder.svg?height=400&width=600"
+            src={srcImg}
             alt="Custom Functionalities Development"
-            width={600}
-            height={400}
             class="rounded-lg shadow-xl"
           />
           <div

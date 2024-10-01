@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-
+import { Image } from "astro:assets";
+import srcImg from "../../../public/image-2.webp";
 const features = [
   "Custom design tailored to your brand",
   "Responsive layouts for all devices",
@@ -83,11 +84,9 @@ const process = [
           </ul>
         </div>
         <div class="relative">
-          <img
-            src="/placeholder.svg?height=400&width=600"
+          <Image
+            src={srcImg}
             alt="High-Impact Website Creation"
-            width={600}
-            height={400}
             class="rounded-lg shadow-xl"
           />
           <div
